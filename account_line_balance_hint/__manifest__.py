@@ -15,4 +15,5 @@
     'auto_install': False,
     'price':0.00,
     'currency': 'USD',
+    'images': ['static/description/banner.png'],
 }
