@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_move_form_inherit_balance_hint" model="ir.ui.view">
+        <field name="name">account.move.form.inherit.balance.hint</field>
+        <field name="model">account.move</field>
+        <!-- Inherit the standard journal entry form -->
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <!--
+                Insert balance_hint column after the 'credit' column
+                in the journal items editable list.
+            -->
+            <xpath expr="//field[@name='line_ids']//tree" position="inside">
+                <field name="balance_hint"
+                       string="Balance"
+                       optional="show"
+                       readonly="1"
+                       attrs="{'invisible': [('balance_hint', '=', False)]}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
