@@ -34,7 +34,7 @@ class AccountMoveLine(models.Model):
                 balance = self._cr.fetchone()[0]
                 sign = '+' if balance >= 0 else ''
                 line.balance_hint = (
-                    f"{sign}{currency.symbol} "
+                    f"B: {sign}{currency.symbol} "
                     f"{currency.round(balance):,.2f}"
                 )
 
@@ -55,7 +55,7 @@ class AccountMoveLine(models.Model):
                 balance = self._cr.fetchone()[0]
                 sign = '+' if balance >= 0 else ''
                 line.balance_hint = (
-                    f"{sign}{currency.symbol} "
+                    f"B: {sign}{currency.symbol} "
                     f"{currency.round(balance):,.2f}"
                 )
 
@@ -72,7 +72,7 @@ class AccountMoveLine(models.Model):
                 balance = self._cr.fetchone()[0]
                 sign = '+' if balance >= 0 else ''
                 line.balance_hint = (
-                    f"{sign}{currency.symbol} "
+                    f"B: {sign}{currency.symbol} "
                     f"{currency.round(balance):,.2f}"
                 )
 
